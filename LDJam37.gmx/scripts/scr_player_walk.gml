@@ -1,4 +1,5 @@
 //y = 200;
-x = x + (move * movespeed);
+//image_index = spr_player_walk;
+x = x + (hsp);
 
 

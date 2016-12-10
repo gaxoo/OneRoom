@@ -11,6 +11,10 @@
       <sprite>sprites\spr_player</sprite>
     </sprites>
     <sprite>sprites\sprite2</sprite>
+    <sprites name="Player">
+      <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_walk</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
