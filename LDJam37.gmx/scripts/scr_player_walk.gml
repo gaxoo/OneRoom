@@ -1,2 +1,4 @@
-y = 200;
-x = x + scr_input();
+//y = 200;
+x = x + (move * movespeed);
+
+

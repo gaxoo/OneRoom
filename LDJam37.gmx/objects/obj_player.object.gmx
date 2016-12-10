@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>state = states.idle;
+movespeed = 5;
 </string>
           </argument>
         </arguments>
@@ -51,11 +52,17 @@
             <string>//if (obj_cont_view.shake &lt; 1) 
 //   obj_cont_view.shake = 0;
 
-//if (move != 0)
-//{
-        
-//}
-    
+scr_input();
+
+if (move == 0)
+{
+    state = states.idle;        
+}
+else
+{
+    state = states.walk;
+}
+   
 switch (state)
 {
     case states.idle: 
