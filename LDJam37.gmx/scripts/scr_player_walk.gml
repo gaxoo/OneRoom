@@ -6,7 +6,7 @@ scr_input();
 
 if (hsp == 0)
 {
-    sprite_index = spr_player_idle;
+    //sprite_index = spr_player_idle;
     state = states.idle;
 }
 else if (hsp > 0)

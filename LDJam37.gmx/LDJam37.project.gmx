@@ -17,10 +17,13 @@
       <sprite>sprites\spr_player_walk</sprite>
     </sprites>
     <sprite>sprites\sprite5</sprite>
+    <sprite>sprites\spr_driver</sprite>
+    <sprite>sprites\spr_font</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_getinputs.gml</script>
     <script>scripts\scr_display_text.gml</script>
     <script>scripts\scr_input.gml</script>
     <script>scripts\scr_screenshake.gml</script>
@@ -31,15 +34,14 @@
       <script>scripts\scr_player_jump.gml</script>
       <script>scripts\scr_player_climb.gml</script>
       <script>scripts\scr_player_rummage.gml</script>
+      <script>scripts\scr_player_normal.gml</script>
+      <script>scripts\scr_collideandmove.gml</script>
     </scripts>
     <script>scripts\DisplayText.gml</script>
-    <script>scripts\scr_collideandmove.gml</script>
-    <script>scripts\scr_getinputs.gml</script>
     <script>scripts\scr_getvariables.gml</script>
     <script>scripts\scr_player_ninja.gml</script>
-    <script>scripts\scr_player_normal.gml</script>
     <script>scripts\scr_shove.gml</script>
-    <script>scripts\script7.gml</script>
+    <script>scripts\scr_clicked.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>
@@ -49,6 +51,7 @@
     <object>objects\obj_room_layer</object>
     <object>objects\obj_waller</object>
     <object>objects\obj_room</object>
+    <object>objects\obj_driver</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TheOneRoom</room>
