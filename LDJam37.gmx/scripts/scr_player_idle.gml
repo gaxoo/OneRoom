@@ -7,5 +7,5 @@ image_speed = .2;
 if (hsp != 0)
 {
     sprite_index = spr_player_walk;
-    state = states.walk;
+    state = states.normal;
 }

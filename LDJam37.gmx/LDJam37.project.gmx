@@ -15,6 +15,7 @@
       <sprite>sprites\spr_player_idle</sprite>
       <sprite>sprites\spr_player_walk</sprite>
     </sprites>
+    <sprite>sprites\sprite5</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -30,12 +31,21 @@
       <script>scripts\scr_player_climb.gml</script>
       <script>scripts\scr_player_rummage.gml</script>
     </scripts>
+    <script>scripts\DisplayText.gml</script>
+    <script>scripts\scr_collideandmove.gml</script>
+    <script>scripts\scr_getinputs.gml</script>
+    <script>scripts\scr_getvariables.gml</script>
+    <script>scripts\scr_player_ninja.gml</script>
+    <script>scripts\scr_player_normal.gml</script>
+    <script>scripts\scr_shove.gml</script>
+    <script>scripts\script7.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>
     <object>objects\obj_player</object>
     <object>objects\object2</object>
     <object>objects\obj_room</object>
+    <object>objects\obj_floor_invis</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\TheOneRoom</room>
