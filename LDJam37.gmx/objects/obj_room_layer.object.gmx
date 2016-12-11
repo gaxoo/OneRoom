@@ -110,7 +110,7 @@ if(room_count == 1)
 }
 
 //destroy when work here is done
-if(room_count == 2)
+if(room_count == 7)
 {
     wall_p = instance_create(x_left, y_upper, obj_waller);
     wall_p.stop_x = x_right;
