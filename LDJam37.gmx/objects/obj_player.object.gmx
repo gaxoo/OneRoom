@@ -52,21 +52,6 @@ movespeed = 2;
             <string>//if (obj_cont_view.shake &lt; 1) 
 //   obj_cont_view.shake = 0;
 
-scr_input();
-
-
-
-if (move == 0)
-{
-    image_index = spr_player_idle;
-    state = states.idle;        
-}
-else
-{
-    image_index = spr_player_walk;
-    state = states.walk;
-}
-   
 switch (state)
 {
     case states.idle: 
