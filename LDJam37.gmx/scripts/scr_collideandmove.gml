@@ -1,7 +1,7 @@
 //Horizontal Collisions
-if (place_meeting(x+hsp,y,obj_floor_invis))
+if (place_meeting(x+hsp,y,obj_solid))
 {
-    while(!place_meeting(x+sign(hsp),y,obj_floor_invis))
+    while(!place_meeting(x+sign(hsp),y,obj_solid))
     {
         x += sign(hsp);
     }
@@ -11,9 +11,9 @@ if (place_meeting(x+hsp,y,obj_floor_invis))
 x += hsp;
 
 //Vertical Collisions
-if (place_meeting(x,y+vsp,obj_floor_invis))
+if (place_meeting(x,y+vsp,obj_solid))
 {
-    while(!place_meeting(x,y+sign(vsp),obj_floor_invis))
+    while(!place_meeting(x,y+sign(vsp),obj_solid))
     {
         y += sign(vsp);
     }
