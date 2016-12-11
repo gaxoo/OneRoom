@@ -28,14 +28,14 @@
             <string>height = 80;
 width = 160;
 
-for (i = 0; i &lt; width; i++) {
+for (i = 0; i &lt; width - 8; i++) {
     instance_create(x + i, y, obj_solid);
     instance_create(x + i, y + height, obj_solid);
 }
 
 for (i = 0; i &lt; height; i++) {
     instance_create(x, y + i, obj_solid);
-    instance_create(x + width, y + i, obj_solid);
+    instance_create(x + width - 8, y + i, obj_solid);
 }
 </string>
           </argument>
