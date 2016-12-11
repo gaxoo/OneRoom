@@ -47,10 +47,10 @@
     <object>objects\obj_solid</object>
     <object>objects\obj_player</object>
     <object>objects\object2</object>
-    <object>objects\obj_floor_invis</object>
+    <object>objects\obj_room</object>
     <object>objects\obj_room_layer</object>
     <object>objects\obj_waller</object>
-    <object>objects\obj_room</object>
+    <object>objects\obj_room0</object>
     <object>objects\obj_driver</object>
   </objects>
   <rooms name="rooms">
