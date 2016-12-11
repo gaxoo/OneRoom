@@ -28,6 +28,7 @@
             <string>scr_getvariables();
 state = states.idle;
 movespeed = 2;
+jump_count = 0;
 </string>
           </argument>
         </arguments>

@@ -6,9 +6,12 @@ scr_getinputs();
 hsp = movespeed * (key_left + key_right);
 
 vsp += 0.2;
-if (place_meeting(x,y+1,obj_solid))
-{
-    if (key_jump) vsp = -5;
+
+if (key_jump && jump_count < 2){
+    jump_count++;
+    vsp = -5;
+} else if (jump_count > 0 && place_meeting(x,y+1,obj_floor_invis)) {
+  jump_count = 0;
 }
 
 //Animate
@@ -19,7 +22,7 @@ if (place_meeting(x,y+1,obj_solid))
 }
 else
 {
-    if (vsp < 0) sprite_index = spr_player_jump; //else sprite_index = spr_player_fall;
+    //if (vsp < 0) sprite_index = spr_player_jump; //else sprite_index = spr_player_fall;
     image_speed = .2;
 }
 
