@@ -29,13 +29,48 @@
 width = 160;
 
 for (i = 0; i &lt;= width - 8; i+=8) {
-    instance_create(x + i, y, obj_solid);
-    instance_create(x + i, y + height, obj_solid);
+
+    if (i &gt;= (width / 2) - 8 &amp;&amp; i &lt;= (width / 2) + 8) {
+        inst = instance_position(x + i, y, obj_solid);
+        if (inst == noone) {
+           instance_create(x + i, y, obj_solid); 
+        } else {
+            with (inst){ instance_destroy(); }
+        }
+        
+        inst = instance_position(x + i, y + height, obj_solid);
+        if (inst == noone) {
+           instance_create(x + i, y + height, obj_solid);
+        } else {
+            with (inst){ instance_destroy(); }
+        }
+    } else {
+        instance_create(x + i, y, obj_solid);
+        instance_create(x + i, y + height, obj_solid);
+    }
+    
 }
 
 for (i = 0; i &lt;= height; i+=8) {
-    instance_create(x, y + i, obj_solid);
-    instance_create(x + width - 8, y + i, obj_solid);
+    if (i &gt;= height / 3 &amp;&amp; i &lt;= height - (height / 3)) {
+        inst = instance_position(x - 4, y + i, obj_solid);
+        if (inst == noone) {
+           instance_create(x, y + i, obj_solid);
+        } else {
+            with (inst){ instance_destroy(); }
+        }
+        
+        inst = instance_position(x + width + 4, y + i, obj_solid);
+        if (inst == noone) {
+           instance_create(x + width - 8, y + i, obj_solid);
+        } else {
+            with (inst){ instance_destroy(); }
+        }
+    } else {
+        instance_create(x, y + i, obj_solid);
+        instance_create(x + width - 8, y + i, obj_solid);
+    }
+
 }
 </string>
           </argument>
