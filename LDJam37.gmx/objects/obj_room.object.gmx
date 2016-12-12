@@ -94,12 +94,7 @@ for (i = 0; i &lt;= height; i+=8) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x, y, obj_room) &amp;&amp; instance_exists(obj_room_layer)
-{
-    obj_room_layer.room_count -= 1;
-    instance_destroy();
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
