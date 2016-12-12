@@ -19,6 +19,10 @@
     <sprite>sprites\sprite5</sprite>
     <sprite>sprites\spr_driver</sprite>
     <sprite>sprites\spr_font</sprite>
+    <sprite>sprites\spr_cursor</sprite>
+    <sprites name="Movable_Objects">
+      <sprite>sprites\spr_bed</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -45,6 +49,8 @@
     <scripts name="obj_room_layer_scripts">
       <script>scripts\can_draw_room.gml</script>
     </scripts>
+    <script>scripts\scr_outline_black.gml</script>
+    <script>scripts\scr_outline_white.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>
@@ -55,6 +61,11 @@
     <object>objects\obj_waller</object>
     <object>objects\obj_room0</object>
     <object>objects\obj_driver</object>
+    <object>objects\obj_cursor</object>
+    <objects name="Movable_Object">
+      <object>objects\obj_bed</object>
+      <object>objects\obj_movable</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\TheOneRoom</room>

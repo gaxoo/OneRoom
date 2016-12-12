@@ -22,7 +22,7 @@ if (hsp < 0){
 if (key_jump && jump_count < 2){
     jump_count++;
     vsp = -5;
-} else if (jump_count > 0 && place_meeting(x,y+1,obj_solid)) {
+} else if (jump_count > 0 && (place_meeting(x,y+1,obj_solid) || place_meeting(x,y+1,obj_movable))) {
   jump_count = 0;
 }
 
