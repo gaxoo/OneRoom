@@ -23,6 +23,7 @@
     <sprites name="Movable_Objects">
       <sprite>sprites\spr_bed</sprite>
     </sprites>
+    <sprite>sprites\sprite11</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -51,6 +52,7 @@
     </scripts>
     <script>scripts\scr_outline_black.gml</script>
     <script>scripts\scr_outline_white.gml</script>
+    <script>scripts\scr_generic_collision_check.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>

@@ -84,7 +84,7 @@ room_speed = 120;
     if ( can_draw_room(x, y, obj_room_width, obj_room_height) ){
         instance_create(x, y, obj_room);
         if( room_count &lt; number_of_gamepath_rooms ){
-            instance_create((x+64),(y+64), obj_driver); //Adds a screw driver to every "gamepath" room
+            instance_create((x+128),(y+25), obj_movable); //Adds an obj_movable to every "gamepath" room
         }
         room_count++;
         //This stores top left and bottom right corners
@@ -98,7 +98,7 @@ room_speed = 120;
     if(room_count == 1 &amp;&amp; player_created == 0)
     {
         player_created = 1;
-        instance_create((x+64),(y+64), obj_player);
+        instance_create((x+64),(y+25), obj_player);
     }
 
     random_column = irandom_range(x_left - obj_room_width, x_right + obj_room_width) div obj_room_width;
