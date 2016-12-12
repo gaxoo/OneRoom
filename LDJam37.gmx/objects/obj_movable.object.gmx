@@ -52,7 +52,8 @@ vsp = 0;
             <string>hsp = 0;
 vsp = 1;
 
-//scr_generic_collision_check(obj_solid, obj_movable);
+//scr_collideandmove();
+
 
 //Horizontal Collisions
 if (place_meeting(x+hsp,y,obj_solid))
@@ -77,6 +78,7 @@ if (place_meeting(x,y+vsp,obj_solid))
 }
 
 y += vsp;
+
 
 </string>
           </argument>

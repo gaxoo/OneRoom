@@ -52,7 +52,6 @@
     </scripts>
     <script>scripts\scr_outline_black.gml</script>
     <script>scripts\scr_outline_white.gml</script>
-    <script>scripts\scr_generic_collision_check.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>
