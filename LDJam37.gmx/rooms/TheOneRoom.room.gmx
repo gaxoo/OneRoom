@@ -17,7 +17,9 @@
     jump,
     climb,
     rummage
-}</code>
+}
+
+window_set_cursor(cr_none);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
