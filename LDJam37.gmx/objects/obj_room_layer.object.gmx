@@ -36,17 +36,17 @@ randomize();
 rand_x = random_range((room_width/4), (room_width*(3/4)));
 rand_y = random_range((room_height/4), (room_height*(3/4)));
 
-//x = rand_x-(rand_x%16);
-//y = rand_y-(rand_y%16);
-x = 0;
-y = 0;
+x = rand_x-(rand_x%160);
+y = rand_y-(rand_y%80);
+//x = 0;
+//y = 0;
 
 x_left = x;
 y_upper = y;
 x_right = 0;
 y_lower = 0;
 
-room_speed = 30;
+room_speed = 120;
 </string>
           </argument>
         </arguments>
@@ -130,9 +130,13 @@ switch(dir)
 //destroy when work here is done
 if(room_count == 8)
 {
+    room_speed = 60;
+
+    //Burke commented out this stuff
     //wall_p = instance_create(x_left, y_upper, obj_waller);
     //wall_p.stop_x = x_right;
     //wall_p.stop_y = y_lower;
+    
     instance_destroy();
 }
 </string>
