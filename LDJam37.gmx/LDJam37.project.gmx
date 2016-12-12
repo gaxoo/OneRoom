@@ -42,6 +42,9 @@
     <script>scripts\scr_player_ninja.gml</script>
     <script>scripts\scr_shove.gml</script>
     <script>scripts\scr_clicked.gml</script>
+    <scripts name="obj_room_layer_scripts">
+      <script>scripts\can_draw_room.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_solid</object>

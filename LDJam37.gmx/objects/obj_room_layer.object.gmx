@@ -30,16 +30,27 @@ player_created = 0;
 
 dir = 1;
 
+
+obj_room_height = 80;
+obj_room_width = 160;
+number_of_gamepath_rooms = 8;
+
 //Seed
 randomize();
 
 rand_x = random_range((room_width/4), (room_width*(3/4)));
 rand_y = random_range((room_height/4), (room_height*(3/4)));
 
-x = rand_x-(rand_x%160);
-y = rand_y-(rand_y%80);
-//x = 0;
-//y = 0;
+starting_column = rand_x div obj_room_width;
+starting_row = rand_y div obj_room_height;
+
+
+//starting_column = (room_width div 2) div obj_room_width;
+//starting_row = (room_height div 2) div obj_room_height;
+//x = rand_x-(rand_x%160);
+//y = rand_y-(rand_y%80);
+x = starting_column * obj_room_width;
+y = starting_row * obj_room_height;
 
 x_left = x;
 y_upper = y;
@@ -69,76 +80,50 @@ room_speed = 120;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-var inst = position_meeting(x, y, obj_room);
-show_debug_message("inst!");
-show_debug_message(inst);
-show_debug_message("room count!");
-show_debug_message(room_count);
-show_debug_message("x");
-show_debug_message(x);
-show_debug_message("y");
-show_debug_message(y);
-if (!inst &amp;&amp; x &gt;= 0 &amp;&amp; y &gt;= 0 &amp;&amp; (x + 160) &lt; room_width &amp;&amp; (y+80) &lt; room_height)
-{
-    instance_create(x, y, obj_room);
-    room_count++;
-    //This stores top left and bottom right corners
-    if( x &lt; x_left) { x_left = x};
-    if( x &gt; x_right) { x_right = x};
-    if( y &lt; y_upper) { y_upper = y};
-    if( y &gt; y_lower) { y_lower = y};
+            <string>if (room_count &lt; number_of_gamepath_rooms * 1.5 ) {
+    if ( can_draw_room(x, y, obj_room_width, obj_room_height) ){
+        instance_create(x, y, obj_room);
+        if( room_count &lt; number_of_gamepath_rooms ){
+            instance_create((x+64),(y+64), obj_driver); //Adds a screw driver to every "gamepath" room
+        }
+        room_count++;
+        //This stores top left and bottom right corners
+        if( x &lt; x_left) { x_left = x};
+        if( x &gt; x_right) { x_right = x};
+        if( y &lt; y_upper) { y_upper = y};
+        if( y &gt; y_lower) { y_lower = y};
+    }
+
+    // add player
+    if(room_count == 1 &amp;&amp; player_created == 0)
+    {
+        player_created = 1;
+        instance_create((x+64),(y+64), obj_player);
+    }
+
+    random_column = irandom_range(x_left - obj_room_width, x_right + obj_room_width) div obj_room_width;
+    random_row = irandom_range(0, room_height div obj_room_height);
+    x = random_column * obj_room_width;
+    y = random_row * obj_room_height;
+
 } else {
-    rand_x = irandom_range(-1, 1);
-    rand_y = irandom_range(-1, 1);
-    x = x_right + (rand_x * 160);
-    y = y_lower + (rand_y * 80);
-}
 
+    created_new_room = true;
+    while(created_new_room){
+        created_new_room = false;
+        with obj_room {
+            if ( can_draw_room(x, y + other.obj_room_height, other.obj_room_width, other.obj_room_height) ){
+                instance_create(x, y + other.obj_room_height, obj_room);
+                other.created_new_room = true;
+            }
+        }
+    }
 
-
-//add player
-if(room_count == 1 &amp;&amp; player_created == 0)
-{
-    player_created = 1;
-    instance_create((x+64),(y+64), obj_player);
-}
-
-
-
-dir = choose(1, 2, 3, 4, dir);
-
-switch(dir)
-{
-    case 1:
-        x += 160;
-        break;
-        
-    case 2:
-        y += 80;
-        break;
-        
-    case 3:
-        x -= 160;
-        break;
-        
-    case 4:
-        y -= 80;
-        break;
-}
-
-//destroy when work here is done
-if(room_count == 8)
-{
     room_speed = 60;
 
-    //Burke commented out this stuff
-    //wall_p = instance_create(x_left, y_upper, obj_waller);
-    //wall_p.stop_x = x_right;
-    //wall_p.stop_y = y_lower;
-    
     instance_destroy();
 }
+
 </string>
           </argument>
         </arguments>
